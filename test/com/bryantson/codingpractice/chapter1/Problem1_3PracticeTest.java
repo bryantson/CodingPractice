@@ -56,5 +56,12 @@ public class Problem1_3PracticeTest {
 		testStr2 = "dcba";
 		assertTrue(problem1_3Practice.isPermutation(testStr1, testStr2));
 	}
+	
+	@Test
+	public void testIsPermutation_ReturnsTrueWhenStringsArePermutation2() {
+			testStr1 = "abcd";
+			testStr2 = "badc";
+			assertTrue(problem1_3Practice.isPermutation(testStr1, testStr2));
+	}
 
 }

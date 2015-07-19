@@ -8,6 +8,9 @@
 
 package com.bryantson.codingpractice.chapter1;
 
+import java.util.Map;
+import java.util.HashMap;
+
 public class Problem1_3Practice {
 
 	/**
@@ -15,7 +18,7 @@ public class Problem1_3Practice {
 	 * 	Returns true if two given strings are permutation of each other. 
 	 * </p>
 	 * <p>
-	 * 	For example, "abcd" is the permutation string of "dcba"
+	 * 	For example, the permutation string of "abc" is "abc", "acb", "bac", "bca", "cab", "cba"
 	 * </p>
 	 * 
 	 * @param str1 and str2 are two parameters to compare to
@@ -35,22 +38,42 @@ public class Problem1_3Practice {
 			return true;
 		}
 
-		int iStr2 = nStr2 - 1;
-
-		for (int iStr1 = 0; iStr1 < nStr1; ++ iStr1) {
-			String currentValStr1 = String.valueOf(str1.charAt(iStr1));
-			String currentValStr2 = String.valueOf(str2.charAt(iStr2));
+		Map<String, Integer> mapChar = new HashMap<String, Integer>();
+		
+		String key;
+		
+		// Look through the first string to store all characters:	
+		for (int i = 0; i < nStr1; ++ i) {
+			key = String.valueOf(str1.charAt(i));
 			
-			// Return false if a character is not equal:
-			if (!currentValStr1.equals(currentValStr2)) {
+			if(!mapChar.containsKey(key)) {
+				mapChar.put(key, Integer.valueOf(1));
+			}
+			else {
+				mapChar.put(key , Integer.valueOf(mapChar.get(key) + 1));
+			}
+		}
+
+		// Go through the second string to match the occurring characters:
+		for (int i = 0; i < nStr2; ++ i) {
+			key = String.valueOf(str2.charAt(i));
+
+			if (!mapChar.containsKey(key) || mapChar.get(key).equals(Integer.valueOf(0))) {
 				return false;
 			}
+			mapChar.put(key, Integer.valueOf(mapChar.get(key) - 1));
+		}
 
-			// Decrement the index to move to left character:
-			-- iStr2;
+		// Go through the map to see if all characters appear only once:
+		for (String iKey : mapChar.keySet()) {
+			if (!mapChar.get(iKey).equals(Integer.valueOf(0))) {
+				return false;
+			}
 		}
 
 		return true;
+
+
 	}
 
 	public static void main(String[] args) {
