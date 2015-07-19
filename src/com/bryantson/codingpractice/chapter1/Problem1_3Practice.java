@@ -3,7 +3,7 @@
  * 	Given two strings, write a method to decide if one is a permutation of the other
  *
  * @author Bryant J. Son
- * @since 07/15/2015
+ * @since 07/19/2015
  */
 
 package com.bryantson.codingpractice.chapter1;
@@ -72,34 +72,7 @@ public class Problem1_3Practice {
 		}
 
 		return true;
-
-
 	}
-
-	public static void main(String[] args) {
-		Problem1_3Practice prob = new Problem1_3Practice();
-
-		String testStr1 = "";
-		String testStr2 = "";
-		System.out.println(prob.isPermutation(testStr1, testStr2));
-
-		testStr1 = "a";
-		testStr2 = "ab";
-		System.out.println(prob.isPermutation(testStr1, testStr2));
-
-		testStr1 = "abba";
-		testStr2 = "abca";
-		System.out.println(prob.isPermutation(testStr1, testStr2));
-
-		testStr1 = "abba";
-		testStr2 = "abba";
-		System.out.println(prob.isPermutation(testStr1, testStr2));
-
-		testStr1 = "abcd";
-		testStr2 = "dcba";
-		System.out.println(prob.isPermutation(testStr1, testStr2));
-	}
-
 
 
 }
