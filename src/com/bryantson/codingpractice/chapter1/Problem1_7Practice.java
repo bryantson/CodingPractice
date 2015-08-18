@@ -7,11 +7,15 @@
  * 	@since  08/17/2015
  */
 
-
 package com.bryantson.codingpractice.chapter1;
 
 public class Problem1_7Practice {
 	
+	/**
+	 * Returns the 2-D matrix all set to zero if any element of matrix is 0
+	 * @param matrix is 2-D matrix of int
+	 * @return 2-D matrix of int all set to zero if any element is zero. Same matrix from input, otherwise.
+	 */
 	public int[][] getMatrixResetIfZero(int[][] matrix) {
 		int M = matrix.length;
 		int N = matrix[0].length;
@@ -26,6 +30,12 @@ public class Problem1_7Practice {
 		return matrix;
 	}
 	
+	/**
+	 * Returns true if two 2-D matrices of int are equal
+	 * @param matrix1 is first 2-D matrix
+	 * @param matrix2 is second 2-D matrix
+	 * @return true if two matrices are same. False, otherwise.
+	 */
 	public boolean equal(int[][] matrix1, int[][] matrix2) {
 		if ((matrix1.length != matrix2.length) || (matrix1[0].length != matrix2[0].length)) {
 			return false;
