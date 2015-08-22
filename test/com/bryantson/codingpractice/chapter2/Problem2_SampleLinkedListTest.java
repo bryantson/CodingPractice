@@ -7,7 +7,7 @@
  */
 
 
-package com.bryantson.codingpractice.chapter1;
+package com.bryantson.codingpractice.chapter2;
 
 import static org.junit.Assert.*;
 import org.junit.Before;

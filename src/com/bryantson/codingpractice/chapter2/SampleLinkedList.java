@@ -10,7 +10,7 @@ package com.bryantson.codingpractice.chapter2;
 
 public class SampleLinkedList {
 	private Node head;
-        private int  size;
+  private int  size;
 
 	public SampleLinkedList(int data) {
 		this.head = new Node(data);
