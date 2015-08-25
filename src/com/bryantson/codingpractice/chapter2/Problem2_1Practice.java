@@ -3,7 +3,7 @@
  * 	Write code to remove duplicates from an unsorted linked list:
  * 
  * FOLLOW UP:
- * 	How would you solve this prolem if a temporary buffer is not allowed.
+ * 	How would you solve this problem if a temporary buffer is not allowed.
  * 	
  *
  * 	@author Bryant Son
@@ -125,18 +125,6 @@ public class Problem2_1Practice {
 
 			return head;
 		}
-
-
-		class Node {
-			private int data;
-			private Node next;
-		
-			public Node(int data) {
-				this.next = null;
-				this.data = data;
-			}
-		}
-
 	
 }
 
