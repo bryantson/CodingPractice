@@ -1,3 +1,9 @@
+/**
+ * Sample Node to be used through out the Chapter 2 problems
+ * 
+ * @author Bryant J. Son
+ * @since  08/24/2015
+ */
 package com.bryantson.codingpractice.chapter2;
 
 public class Node {
@@ -7,6 +13,28 @@ public class Node {
 	public Node(int data) {
 		this.data = data;
 		this.next = null;
+	}
+	
+	public void print() {
+		Node curr = this;
+		
+		while (curr != null) {
+			System.out.print(curr.data);
+			System.out.print(" => ");
+			curr = curr.next;
+		}
+		System.out.println(" null");
+	}
+	
+	public int size() {
+		Node curr = this;
+		
+		int size = 0;
+		while (curr != null) {
+			curr = curr.next;
+			++ size;
+		}
+		return size;
 	}
 	
 	public void append(int data) {
